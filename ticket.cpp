@@ -38,46 +38,39 @@ class flights
 public:
     //Declare methods
 
-    //Set flight number
+    //Declare setters
     void setFlightN(int fN)
     {
         this->flightN = fN;
     }
-    //Set first class seats
     void setFSeats(int fS)
     {
         this->fMax = fS;
         this->fCurrent = 1;
     }
-    //Set business class seats
     void setBSeats(int bS)
     {
         this->bMax = bS;
         this->bCurrent = (this->fMax * 7) + 1;
     }
-    //Set economy class seats
     void setESeats(int eS)
     {
         this->eMax = eS;
         this->eCurrent = (this->fMax * 7) + (this->bMax * 7) + 1;
     }
-    //Set departure 
-    void setDepart(std::string dP)
+    void setDepart(std::string &dP)
     {
         this->depart = dP;
     }
-    //Set destination
-    void setArrive(std::string aV)
+    void setArrive(std::string &aV)
     {
         this->arrive = aV;
     }
-    //Set date
-    void setDate(std::string dT)
+    void setDate(std::string &dT)
     {
         this->date = dT;
     }
-    //Set time
-    void setTime(std::string tM)
+    void setTime(std::string &tM)
     {
         this->time = tM;
     }
@@ -97,72 +90,59 @@ public:
         this->eCurrent++;
     }
 
-    //Get flight number
+    //Declare getters
     int getFlightN()
     {
         return this->flightN;
     }
-    //Get first class max rows
     int getFMax()
     {
         return this->fMax;
     }
-    //Get first class max seats
     int getFMaxSeat()
     {
         return (this->fMax * 7);
     }
-    //Get first class current seat
     int getFSeat()
     {
         return this->fCurrent;
     }
-    //Get business class max rows
     int getBMax()
     {
         return this->bMax;
     }
-     //Get business class max seats
     int getBMaxSeat()
     {
         return (this->bMax * 7);
     }
-    //Get business class current seat
     int getBSeat()
     {
         return this->bCurrent;
     }
-    //Get economy class max rows
     int getEMax()
     {
         return this->eMax;
     }
-    //Get economy class max seats
     int getEMaxSeat()
     {
         return (this->eMax * 7);
     }
-    //Get economy class current seat
     int getESeat()
     {
         return this->eCurrent;
     }
-    //Get departure
     std::string getDepart()
     {
         return this->depart;
     }
-    //Get destination
     std::string getArrive()
     {
         return this->arrive;
     }
-    //Get date
     std::string getDate()
     {
         return this->date;
     }
-    //Get time
     std::string getTime()
     {
         return this->time;
@@ -187,83 +167,69 @@ class bookings
 public:
     //Declare methods
 
-    //Set booking number
+    //Declare setters
     void setBookingN(int bN)
     {
         this->bookingN = bN;
     }
-    //Set departure
-    void setDepart(std::string dP)
+    void setDepart(std::string &dP)
     {
         this->depart = dP;
     }
-    //Set destination
-    void setArrive(std::string aV)
+    void setArrive(std::string &aV)
     {
         this->arrive = aV;
     }
-    //Set date
-    void setDate(std::string dT)
+    void setDate(std::string &dT)
     {
         this->date = dT;
     }
-    //Set time
-    void setTime(std::string tM)
+    void setTime(std::string &tM)
     {
         this->time = tM;
     }
-    //Set class
-    void setSeatType(std::string sT)
+    void setSeatType(std::string &sT)
     {
         this->seatType = sT;
     }
-    //Set first name
-    void setFirstName(std::string fstN)
+    void setFirstName(std::string &fstN)
     {
         this->firstName = fstN;
     }
-    //Set last name
-    void setLastName(std::string lstN)
+    void setLastName(std::string &lstN)
     {
         this->lastName = lstN;
     }
 
-    //Get booking number
+    //Declare getters
     int getBookingN()
     {
         return this->bookingN;
     }
-    //Get departure
     std::string getDepart()
     {
         return this->depart;
     }
-    //Get destination
     std::string getArrive()
     {
         return this->arrive;
     }
-    //Get date
     std::string getDate()
     {
         return this->date;
     }
-    //Get time
     std::string getTime()
     {
         return this->time;
     }
-    //Get class
     std::string getSeatType()
     {
         return this->seatType;
     }
-    //Get first name
     std::string getFirstName()
     {
         return this->firstName;
     }
-    //Get last name
     std::string getLastName()
     {
         return this->lastName;
