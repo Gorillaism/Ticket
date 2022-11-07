@@ -34,12 +34,12 @@ public:
     void setBSeats(int bS)
     {
         this->bMax = bS;
-        this->bCurrent = this->fMax + 1;
+        this->bCurrent = (this->fMax * 7) + 1;
     }
     void setESeats(int eS)
     {
         this->eMax = eS;
-        this->eCurrent = this->fMax + this->bMax + 1;
+        this->eCurrent = (this->fMax * 7) + (this->bMax * 7) + 1;
     }
     void setDepart(std::string dP)
     {
@@ -79,7 +79,7 @@ public:
     }
     int getFMax()
     {
-        return this->fMax;
+        return (this->fMax * 7);
     }
     int getFSeat()
     {
@@ -87,7 +87,7 @@ public:
     }
     int getBMax()
     {
-        return this->bMax;
+        return (this->bMax * 7);
     }
     int getBSeat()
     {
@@ -95,7 +95,7 @@ public:
     }
     int getEMax()
     {
-        return this->eMax;
+        return (this->eMax * 7);
     }
     int getESeat()
     {
