@@ -22,6 +22,7 @@
  */
 class flights
 {
+    //Declare variables
     int flightN;
     int fMax;
     int fCurrent;
@@ -35,106 +36,133 @@ class flights
     std::string time;
 
 public:
+    //Declare methods
+
+    //Set flight number
     void setFlightN(int fN)
     {
         this->flightN = fN;
     }
+    //Set first class seats
     void setFSeats(int fS)
     {
         this->fMax = fS;
         this->fCurrent = 1;
     }
+    //Set business class seats
     void setBSeats(int bS)
     {
         this->bMax = bS;
         this->bCurrent = (this->fMax * 7) + 1;
     }
+    //Set economy class seats
     void setESeats(int eS)
     {
         this->eMax = eS;
         this->eCurrent = (this->fMax * 7) + (this->bMax * 7) + 1;
     }
+    //Set departure 
     void setDepart(std::string dP)
     {
         this->depart = dP;
     }
+    //Set destination
     void setArrive(std::string aV)
     {
         this->arrive = aV;
     }
+    //Set date
     void setDate(std::string dT)
     {
         this->date = dT;
     }
+    //Set time
     void setTime(std::string tM)
     {
         this->time = tM;
     }
+    //Increase first class current seat
     void increaseF()
     {
         this->fCurrent++;
     }
+    //Increase business class current seat
     void increaseB()
     {
         this->bCurrent++;
     }
+    //Increase economy class current seat
     void increaseE()
     {
         this->eCurrent++;
     }
 
+    //Get flight number
     int getFlightN()
     {
         return this->flightN;
     }
+    //Get first class max rows
     int getFMax()
     {
         return this->fMax;
     }
+    //Get first class max seats
     int getFMaxSeat()
     {
         return (this->fMax * 7);
     }
+    //Get first class current seat
     int getFSeat()
     {
         return this->fCurrent;
     }
+    //Get business class max rows
     int getBMax()
     {
         return this->bMax;
     }
+     //Get business class max seats
     int getBMaxSeat()
     {
         return (this->bMax * 7);
     }
+    //Get business class current seat
     int getBSeat()
     {
         return this->bCurrent;
     }
+    //Get economy class max rows
     int getEMax()
     {
         return this->eMax;
     }
+    //Get economy class max seats
     int getEMaxSeat()
     {
         return (this->eMax * 7);
     }
+    //Get economy class current seat
     int getESeat()
     {
         return this->eCurrent;
     }
+    //Get departure
     std::string getDepart()
     {
         return this->depart;
     }
+    //Get destination
     std::string getArrive()
     {
         return this->arrive;
     }
+    //Get date
     std::string getDate()
     {
         return this->date;
     }
+    //Get time
     std::string getTime()
     {
         return this->time;
@@ -146,6 +174,7 @@ public:
  */
 class bookings
 {
+    //Declare variables
     int bookingN;
     std::string depart;
     std::string arrive;
@@ -156,67 +185,85 @@ class bookings
     std::string lastName;
 
 public:
+    //Declare methods
+
+    //Set booking number
     void setBookingN(int bN)
     {
         this->bookingN = bN;
     }
+    //Set departure
     void setDepart(std::string dP)
     {
         this->depart = dP;
     }
+    //Set destination
     void setArrive(std::string aV)
     {
         this->arrive = aV;
     }
+    //Set date
     void setDate(std::string dT)
     {
         this->date = dT;
     }
+    //Set time
     void setTime(std::string tM)
     {
         this->time = tM;
     }
+    //Set class
     void setSeatType(std::string sT)
     {
         this->seatType = sT;
     }
+    //Set first name
     void setFirstName(std::string fstN)
     {
         this->firstName = fstN;
     }
+    //Set last name
     void setLastName(std::string lstN)
     {
         this->lastName = lstN;
     }
 
+    //Get booking number
     int getBookingN()
     {
         return this->bookingN;
     }
+    //Get departure
     std::string getDepart()
     {
         return this->depart;
     }
+    //Get destination
     std::string getArrive()
     {
         return this->arrive;
     }
+    //Get date
     std::string getDate()
     {
         return this->date;
     }
+    //Get time
     std::string getTime()
     {
         return this->time;
     }
+    //Get class
     std::string getSeatType()
     {
         return this->seatType;
     }
+    //Get first name
     std::string getFirstName()
     {
         return this->firstName;
     }
+    //Get last name
     std::string getLastName()
     {
         return this->lastName;
@@ -230,18 +277,27 @@ public:
  */
 void fillFlightList(std::string file, std::list<flights *> *List)
 {
+    //Open file to read from
     std::ifstream flightFile(file);
+    //Declare string
     std::string filedata;
 
     if (flightFile.is_open())
     {
+        //Get line from file to string
         while (getline(flightFile, filedata) && !filedata.empty())
         {
+            //Declare new object
             flights *newFlight = new flights;
+            //Stringstream string
             std::stringstream data(filedata);
+            //Declare temp string
             std::string temp;
+            //Get line from stringstream up to a comma
             getline(data, temp, ',');
+            //Declare int and convert string to int
             int tempN = atoi(temp.c_str());
+            //Call method
             newFlight->setFlightN(tempN);
 
             getline(data, temp, ',');
@@ -265,8 +321,10 @@ void fillFlightList(std::string file, std::list<flights *> *List)
             tempN = atoi(temp.c_str());
             newFlight->setESeats(tempN);
 
+            //Add to the list
             List->push_back(newFlight);
         }
+        //Close file
         flightFile.close();
     }
     else
@@ -282,18 +340,27 @@ void fillFlightList(std::string file, std::list<flights *> *List)
  */
 void fillBookingList(std::string file, std::list<bookings *> *List)
 {
+    //Open file to read from
     std::ifstream bookingFile(file);
+    //Declare sting
     std::string filedata;
 
     if (bookingFile.is_open())
     {
+        //Get line from file to string
         while (getline(bookingFile, filedata) && !filedata.empty())
         {
+            //Declare new object
             bookings *newBooking = new bookings;
+            //Stringstream string
             std::stringstream data(filedata);
+            //Declare temp string
             std::string temp;
+            //Get line from stringstream up to a comma
             getline(data, temp, ',');
+            //Declare int and convert string to int
             int tempN = atoi(temp.c_str());
+            //Call method
             newBooking->setBookingN(tempN);
 
             getline(data, temp, ',');
@@ -311,8 +378,10 @@ void fillBookingList(std::string file, std::list<bookings *> *List)
             getline(data, temp);
             newBooking->setLastName(temp);
 
+            //Add to list
             List->push_back(newBooking);
         }
+        //Close file
         bookingFile.close();
     }
     else
@@ -328,23 +397,31 @@ void fillBookingList(std::string file, std::list<bookings *> *List)
  */
 void printTickets(std::list<flights *> fList, std::list<bookings *> bList)
 {
+    //Declare iterators
     std::list<bookings *>::iterator it;
     std::list<flights *>::iterator that;
+    //Loop though both lists
     for (it = bList.begin(); it != bList.end(); ++it)
     {
         for (that = fList.begin(); that != fList.end(); ++that)
         {
+            //Declare pointers to work with
             bookings *bptr = *it;
             flights *fptr = *that;
 
+            //Check for matching conditions
             if (bptr->getDate() == fptr->getDate() && bptr->getTime() == fptr->getTime() && bptr->getDepart() == fptr->getDepart() && bptr->getArrive() == fptr->getArrive())
-            {
+            {   
+                //Declare ticket name
                 char ticketName[20];
                 sprintf(ticketName, "ticket-%d.txt", bptr->getBookingN());
+                //Declare variables
                 int seat;
                 int row = 1;
+                //Open file to write to 
                 std::ofstream ticketFile(ticketName);
-
+                
+                //Check for class and set seat to corresponding class
                 if (bptr->getSeatType() == "first")
                 {
                     seat = fptr->getFSeat();
@@ -360,6 +437,7 @@ void printTickets(std::list<flights *> fList, std::list<bookings *> bList)
                     seat = fptr->getESeat();
                     fptr->increaseE();
                 }
+                //Increase row to corresponding seat
                 while (seat > 7 * row)
                 {
                     row++;
@@ -367,12 +445,14 @@ void printTickets(std::list<flights *> fList, std::list<bookings *> bList)
 
                 if (ticketFile.is_open())
                 {
+                    //Write info into ticket
                     ticketFile << "BOOKING: " << bptr->getBookingN() << "\nFLIGHT: " << fptr->getFlightN() << " DEPARTURE: " << bptr->getDepart() << " DESTINATION: " << bptr->getArrive() << " " << bptr->getDate() << " " << bptr->getTime() << "\nPASSENGER: " << bptr->getFirstName() << " " << bptr->getLastName() << "\nCLASS: " << bptr->getSeatType() << "\nROW: " << row << " SEAT: " << seat;
                 }
                 else
                 {
                     std::cerr << "Unable to open file" << std::endl;
                 }
+                //Close file
                 ticketFile.close();
             }
         }
@@ -384,25 +464,37 @@ void printTickets(std::list<flights *> fList, std::list<bookings *> bList)
  * @param[in] fList Flight list
  */
 void cancelFlights(std::list<flights *> &fList)
-{
+{  
+    //Declare iterator
     std::list<flights *>::iterator it;
+    //Open file to write to
     std::ofstream cancel("cancelled-flights.txt");
+    //Set iterator to the begining of list
     it = fList.begin();
+    //Loop through until end of list
     while (it != fList.end())
     {
+        //Declare pointer to work with
         flights *fptr = *it;
+        //Check if any seats are taken
         if (fptr->getFSeat() == 1 && fptr->getBSeat() == fptr->getFMaxSeat() + 1 && fptr->getESeat() == fptr->getFMaxSeat() + fptr->getBMaxSeat() + 1)
         {
+            //Write info to file
             cancel << fptr->getFlightN() << "," << fptr->getDepart() << "," << fptr->getArrive() << "," << fptr->getDate() << "," << fptr->getTime() << "," << fptr->getFMax() << "," << fptr->getBMax() << "," << fptr->getEMax() << "\n";
+            //Remove object from list
             fList.remove(fptr);
+            //Free object
             delete fptr;
+            //Set iterator to begining to loop through again
             it = fList.begin();
         }
         else
         {
+            //Move iterator to next in the list
             it++;
         }
     }
+    //Close file
     cancel.close();
 }
 
@@ -412,24 +504,33 @@ void cancelFlights(std::list<flights *> &fList)
  */
 void seatingChart(std::list<flights *> fList)
 {
+    //Declare iterator
     std::list<flights *>::iterator it;
+    //Open file to write to
     std::ofstream seating("seating-report.txt");
+    //Loop though list
     for (it = fList.begin(); it != fList.end(); it++)
     {
+        //Declare pointer to work with
         flights *fptr = *it;
+        //Declare variables
         int row = 1;
         int count = 0;
+        //Write flight info to file
         seating << "Flight " << fptr->getFlightN() << ", Departure " << fptr->getDepart() << ", Destination " << fptr->getArrive() << ", Date " << fptr->getDate() << ", Time " << fptr->getTime() << "\n";
+        //Write first class seats
         seating << "First Class\n";
         for (int seat = 1; seat <= fptr->getFMaxSeat(); seat++)
         {
+            //Check for row
             if (seat > 7 * row)
             {
                 row++;
                 seating << "\n";
                 count = 0;
             }
-
+            
+            //Write [1] if seat is taken and [0] if not
             if (seat < fptr->getFSeat())
             {
                 seating << "[1]";
@@ -438,12 +539,15 @@ void seatingChart(std::list<flights *> fList)
             {
                 seating << "[0]";
             }
+            //increase count each loop
             count++;
+            //Write space if conditions met
             if (count == 2 || count == 5)
             {
                 seating << " ";
             }
         }
+        //Write business class seats
         seating << "\nBusiness Class";
         for (int seat = fptr->getFMaxSeat() + 1; seat <= fptr->getFMaxSeat() + fptr->getBMaxSeat(); seat++)
         {
@@ -468,6 +572,7 @@ void seatingChart(std::list<flights *> fList)
                 seating << " ";
             }
         }
+        //Write economy class seats
         seating << "\nEconomy Class";
         for (int seat = fptr->getFMaxSeat() + fptr->getBMaxSeat() + 1; seat <= fptr->getFMaxSeat() + fptr->getBMaxSeat() + fptr->getEMaxSeat(); seat++)
         {
@@ -494,6 +599,7 @@ void seatingChart(std::list<flights *> fList)
         }
         seating << "\n\n";
     }
+    //Close file
     seating.close();
 }
 
