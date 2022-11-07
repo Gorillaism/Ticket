@@ -611,8 +611,7 @@ int main(int argc, char **argv)
     }
 
     /**
-     * @brief Declare lists
-     * flight list and booking list
+     * @brief Declare flight list and booking list
      */
     std::list<flights *> flightList;
     std::list<bookings *> bookingList;
