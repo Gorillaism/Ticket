@@ -1,8 +1,18 @@
+/**
+ * @file class.cpp
+ * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
+ * @brief Class definition
+ * @version 1
+ * @date 2022-11-09
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include "class.hh"
 
-// Declare flights method
+// Define flights methods
 
-// Declare setters
+// Define setters
 void flights::setFlightN(int fN)
 {
     this->flightN = fN;
@@ -52,7 +62,7 @@ void flights::increaseE()
     this->eCurrent++;
 }
 
-// Declare getters
+// Define getters
 int flights::getFlightN()
 {
     return this->flightN;
@@ -110,9 +120,9 @@ std::string flights::getTime()
     return this->time;
 }
 
-// Declare bookings methods
+// Define bookings methods
 
-// Declare setters
+// Define setters
 void bookings::setBookingN(int bN)
 {
     this->bookingN = bN;
@@ -146,7 +156,7 @@ void bookings::setLastName(std::string &lstN)
     this->lastName = lstN;
 }
 
-// Declare getters
+// Define getters
 int bookings::getBookingN()
 {
     return this->bookingN;

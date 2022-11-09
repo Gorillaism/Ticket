@@ -2,11 +2,11 @@
  * @file ticket.cpp
  * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
  * @brief Ticket system in C++
- * @version 1
+ * @version 1.1
  * @date 2022-11-07
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 #include <iostream>
 #include <list>

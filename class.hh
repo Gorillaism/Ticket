@@ -1,3 +1,13 @@
+/**
+ * @file class.hh
+ * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
+ * @brief Class header
+ * @version 1
+ * @date 2022-11-09
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include <iostream>
 #include <string>
 
@@ -7,49 +17,147 @@
 class flights
 {
     // Declare variables
-    int flightN;
-    int fMax;
-    int fCurrent;
-    int bMax;
-    int bCurrent;
-    int eMax;
-    int eCurrent;
-    std::string depart;
-    std::string arrive;
-    std::string date;
-    std::string time;
+    int flightN;        // Flight number
+    int fMax;           // Max first class rows
+    int fCurrent;       // Current first class seat
+    int bMax;           // Max business class rows
+    int bCurrent;       // Current business class seat
+    int eMax;           // Max economy class rows
+    int eCurrent;       // Current economy class seat
+    std::string depart; // Departure airport
+    std::string arrive; // Destination airport
+    std::string date;   // Date
+    std::string time;   // Time
 
 public:
-    // Declare methods
+    // Declare method prototypes
 
     // Declare setters
+    /**
+     * @brief Set the Flight number
+     * @param[in] fN Flight number
+     */
     void setFlightN(int fN);
+    /**
+     * @brief Set the max first class rows and current seat
+     * @param[in] fS First class rows
+     */
     void setFSeats(int fS);
+    /**
+     * @brief Set the max business class rows and current seat
+     * @param[in] bS Business class rows
+     */
     void setBSeats(int bS);
+    /**
+     * @brief Set the max economy class rows and current seat
+     * @param[in] eS Economy class rows
+     */
     void setESeats(int eS);
+    /**
+     * @brief Set the departure airport
+     * @param[in] dP Departure airport
+     */
     void setDepart(std::string &dP);
+    /**
+     * @brief Set the destination airport
+     * @param[in] aV Destination airport
+     */
     void setArrive(std::string &aV);
+    /**
+     * @brief Set the date
+     * @param[in] dT Date
+     */
     void setDate(std::string &dT);
+    /**
+     * @brief Set the time
+     * @param[in] tM Time
+     */
     void setTime(std::string &tM);
+
     // Increase current seats
+    /**
+     * @brief Increase first class current seat
+     */
     void increaseF();
+    /**
+     * @brief Increase business class current seat
+     */
     void increaseB();
+    /**
+     * @brief Increase economy class current seat
+     */
     void increaseE();
 
     // Declare getters
+    /**
+     * @brief Get the flight number
+     * @return Flight number
+     */
     int getFlightN();
+    /**
+     * @brief Get the first class max rows
+     * @return First class max rows
+     */
     int getFMax();
+    /**
+     * @brief Get the first class max seats
+     * @return First class max seats
+     */
     int getFMaxSeat();
+    /**
+     * @brief Get the first class current seat
+     * @return First class current seat
+     */
     int getFSeat();
+    /**
+     * @brief Get the business class max rows
+     * @return Business class max rows
+     */
     int getBMax();
+    /**
+     * @brief Get the business class max seats
+     * @return Business class max seats
+     */
     int getBMaxSeat();
+    /**
+     * @brief Get the business class current seat
+     * @return Business class current seat
+     */
     int getBSeat();
+    /**
+     * @brief Get the economy class max rows
+     * @return Economy class max rows
+     */
     int getEMax();
+    /**
+     * @brief Get the economy class max seats
+     * @return Economy class max seats
+     */
     int getEMaxSeat();
+    /**
+     * @brief Get the economy class current seat
+     * @return Economy class current seat
+     */
     int getESeat();
+    /**
+     * @brief Get the departure airport
+     * @return Departure airport
+     */
     std::string getDepart();
+    /**
+     * @brief Get the destination airport
+     * @return Destination airport
+     */
     std::string getArrive();
+    /**
+     * @brief Get the date
+     * @return Date
+     */
     std::string getDate();
+    /**
+     * @brief Get the time
+     * @return Time
+     */
     std::string getTime();
 };
 #endif
@@ -60,36 +168,100 @@ public:
 class bookings
 {
     // Declare variables
-    int bookingN;
-    std::string depart;
-    std::string arrive;
-    std::string date;
-    std::string time;
-    std::string seatType;
-    std::string firstName;
-    std::string lastName;
+    int bookingN;          // Booking number
+    std::string depart;    // Departure airport
+    std::string arrive;    // Destination airport
+    std::string date;      // Date
+    std::string time;      // Time
+    std::string seatType;  // Seat class
+    std::string firstName; // First name
+    std::string lastName;  // Last name
 
 public:
-    // Declare methods
+    // Declare method prototypes
 
     // Declare setters
+    /**
+     * @brief Set the booking number
+     * @param[in] bN Booking number
+     */
     void setBookingN(int bN);
+    /**
+     * @brief Set the departure airport
+     * @param[in] dP Departure airport
+     */
     void setDepart(std::string &dP);
+    /**
+     * @brief Set the destination airport
+     * @param[in] aV  Destination airport
+     */
     void setArrive(std::string &aV);
+    /**
+     * @brief Set the date
+     * @param[in] dT Date
+     */
     void setDate(std::string &dT);
+    /**
+     * @brief Set the time
+     * @param[in] tM Time
+     */
     void setTime(std::string &tM);
+    /**
+     * @brief Set the seat class
+     * @param[in] sT Seat class
+     */
     void setSeatType(std::string &sT);
+    /**
+     * @brief Set the first name
+     * @param[in] fstN First name
+     */
     void setFirstName(std::string &fstN);
+    /**
+     * @brief Set the last name
+     * @param[in] lstN Last name
+     */
     void setLastName(std::string &lstN);
 
     // Declare getters
+    /**
+     * @brief Get the booking number
+     * @return Booking number
+     */
     int getBookingN();
+    /**
+     * @brief Get the departure airport
+     * @return Departure airport
+     */
     std::string getDepart();
+    /**
+     * @brief Get the destination airport
+     * @return Destination airport
+     */
     std::string getArrive();
+    /**
+     * @brief Get the date
+     * @return Date
+     */
     std::string getDate();
+    /**
+     * @brief Get the time
+     * @return Time
+     */
     std::string getTime();
+    /**
+     * @brief Get the seat class
+     * @return Seat class
+     */
     std::string getSeatType();
+    /**
+     * @brief Get the first name
+     * @return First name
+     */
     std::string getFirstName();
+    /**
+     * @brief Get the last name
+     * @return Last name
+     */
     std::string getLastName();
 };
 #endif
