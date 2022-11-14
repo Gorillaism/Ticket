@@ -2,7 +2,7 @@
  * @file class.hh
  * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
  * @brief Class header
- * @version 1
+ * @version 1.1
  * @date 2022-11-09
  *
  * @copyright Copyright (c) 2022
@@ -24,6 +24,9 @@ class flights
     int bCurrent;       // Current business class seat
     int eMax;           // Max economy class rows
     int eCurrent;       // Current economy class seat
+    int sec1;           // Amount seats in Section 1
+    int sec2;           // Amount seats in Section 2
+    int sec3;           // Amount seats in Section 3
     std::string depart; // Departure airport
     std::string arrive; // Destination airport
     std::string date;   // Date
@@ -53,6 +56,25 @@ public:
      * @param[in] eS Economy class rows
      */
     void setESeats(int eS);
+    /**
+     * @brief Set the amount of seats in the first section
+     * @param[in] s1 Section 1
+     */
+    void setSec1(int s1);
+    /**
+     * @brief Set the amount of seats in the second section
+     * @param[in] s2 Section 2
+     */
+    void setSec2(int s2);
+    /**
+     * @brief Set the amount of seats in the third section
+     * @param[in] s3 Section 3
+     */
+    void setSec3(int s3);
+    /**
+     * @brief Set the Current Seats
+     */
+    void setCurrentSeats();
     /**
      * @brief Set the departure airport
      * @param[in] dP Departure airport
@@ -139,6 +161,26 @@ public:
      * @return Economy class current seat
      */
     int getESeat();
+    /**
+     * @brief Get the amount of seat in the first section
+     * @return Seats in first section 
+     */
+    int getSec1();
+    /**
+     * @brief Get the amount of seat in the second section
+     * @return Seats in second section 
+     */
+    int getSec2();
+    /**
+     * @brief Get the amount of seat in the third section
+     * @return Seats in third section 
+     */
+    int getSec3();
+    /**
+     * @brief Get the amount of seat in each row
+     * @return Seats per row 
+     */
+    int getSecTotal();
     /**
      * @brief Get the departure airport
      * @return Departure airport

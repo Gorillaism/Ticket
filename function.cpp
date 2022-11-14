@@ -2,7 +2,7 @@
  * @file function.cpp
  * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
  * @brief Functions definition
- * @version 1
+ * @version 1.1
  * @date 2022-11-09
  *
  * @copyright Copyright (c) 2022
@@ -58,10 +58,21 @@ void fillFlightList(std::string file, std::list<flights *> *List)
             tempN = atoi(temp.c_str());
             newFlight->setBSeats(tempN);
 
-            getline(data, temp);
+            getline(data, temp, ',');
             tempN = atoi(temp.c_str());
             newFlight->setESeats(tempN);
 
+            getline(data,temp, '-');
+            tempN = atoi(temp.c_str());
+            newFlight->setSec1(tempN);
+            getline(data,temp, '-');
+            tempN = atoi(temp.c_str());
+            newFlight->setSec2(tempN);
+            getline(data,temp);
+            tempN = atoi(temp.c_str());
+            newFlight->setSec3(tempN);
+
+            newFlight->setCurrentSeats();
             // Add to the list
             List->push_back(newFlight);
         }
@@ -179,7 +190,7 @@ void printTickets(std::list<flights *> fList, std::list<bookings *> bList)
                     fptr->increaseE();
                 }
                 // Increase row to corresponding seat
-                while (seat > 7 * row)
+                while (seat > (fptr->getSecTotal() * row))
                 {
                     row++;
                 }
@@ -264,7 +275,7 @@ void seatingChart(std::list<flights *> fList)
         for (int seat = 1; seat <= fptr->getFMaxSeat(); seat++)
         {
             // Check for row
-            if (seat > 7 * row)
+            if (seat > (fptr->getSecTotal() * row))
             {
                 row++;
                 seating << "\n";
@@ -283,7 +294,7 @@ void seatingChart(std::list<flights *> fList)
             // increase count each loop
             count++;
             // Write space if conditions met
-            if (count == 2 || count == 5)
+            if (count == fptr->getSec1() || count == fptr->getSec1() + fptr->getSec2())
             {
                 seating << " ";
             }
@@ -292,7 +303,7 @@ void seatingChart(std::list<flights *> fList)
         seating << "\nBusiness Class";
         for (int seat = fptr->getFMaxSeat() + 1; seat <= fptr->getFMaxSeat() + fptr->getBMaxSeat(); seat++)
         {
-            if (seat > 7 * row)
+            if (seat > (fptr->getSecTotal() * row))
             {
                 row++;
                 seating << "\n";
@@ -308,7 +319,7 @@ void seatingChart(std::list<flights *> fList)
                 seating << "[0]";
             }
             count++;
-            if (count == 2 || count == 5)
+            if (count == fptr->getSec1() || count == fptr->getSec1() + fptr->getSec2())
             {
                 seating << " ";
             }
@@ -317,7 +328,7 @@ void seatingChart(std::list<flights *> fList)
         seating << "\nEconomy Class";
         for (int seat = fptr->getFMaxSeat() + fptr->getBMaxSeat() + 1; seat <= fptr->getFMaxSeat() + fptr->getBMaxSeat() + fptr->getEMaxSeat(); seat++)
         {
-            if (seat > 7 * row)
+            if (seat > (fptr->getSecTotal() * row))
             {
                 row++;
                 seating << "\n";
@@ -333,7 +344,7 @@ void seatingChart(std::list<flights *> fList)
                 seating << "[0]";
             }
             count++;
-            if (count == 2 || count == 5)
+            if (count == fptr->getSec1() || count == fptr->getSec1() + fptr->getSec2())
             {
                 seating << " ";
             }

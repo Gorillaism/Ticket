@@ -2,7 +2,7 @@
  * @file class.cpp
  * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
  * @brief Class definition
- * @version 1
+ * @version 1.1
  * @date 2022-11-09
  *
  * @copyright Copyright (c) 2022
@@ -20,17 +20,32 @@ void flights::setFlightN(int fN)
 void flights::setFSeats(int fS)
 {
     this->fMax = fS;
-    this->fCurrent = 1;
 }
 void flights::setBSeats(int bS)
 {
     this->bMax = bS;
-    this->bCurrent = (this->fMax * 7) + 1;
 }
 void flights::setESeats(int eS)
 {
     this->eMax = eS;
-    this->eCurrent = (this->fMax * 7) + (this->bMax * 7) + 1;
+}
+void flights::setSec1(int s1)
+{
+    this->sec1 = s1;
+}
+void flights::setSec2(int s2)
+{
+    this->sec2 = s2;
+}
+void flights::setSec3(int s3)
+{
+    this->sec3 = s3;
+}
+void flights::setCurrentSeats()
+{
+    this->fCurrent = 1;
+    this->bCurrent = (this->fMax * (this->sec1 + this->sec2 + this->sec3)) + 1;
+    this->eCurrent = (this->fMax * (this->sec1 + this->sec2 + this->sec3)) + (this->bMax * (this->sec1 + this->sec2 + this->sec3)) + 1;
 }
 void flights::setDepart(std::string &dP)
 {
@@ -48,6 +63,7 @@ void flights::setTime(std::string &tM)
 {
     this->time = tM;
 }
+
 // Increase current seats
 void flights::increaseF()
 {
@@ -73,7 +89,7 @@ int flights::getFMax()
 }
 int flights::getFMaxSeat()
 {
-    return (this->fMax * 7);
+    return (this->fMax * (this->sec1 + this->sec2 + this->sec3));
 }
 int flights::getFSeat()
 {
@@ -85,7 +101,7 @@ int flights::getBMax()
 }
 int flights::getBMaxSeat()
 {
-    return (this->bMax * 7);
+    return (this->bMax * (this->sec1 + this->sec2 + this->sec3));
 }
 int flights::getBSeat()
 {
@@ -97,12 +113,29 @@ int flights::getEMax()
 }
 int flights::getEMaxSeat()
 {
-    return (this->eMax * 7);
+    return (this->eMax * (this->sec1 + this->sec2 + this->sec3));
 }
 int flights::getESeat()
 {
     return this->eCurrent;
 }
+int flights::getSec1()
+{
+    return this->sec1;
+}
+int flights::getSec2()
+{
+    return this->sec2;
+}
+int flights::getSec3()
+{
+    return this->sec3;
+}
+int flights::getSecTotal()
+{
+    return (this->sec1 + this->sec2 + this->sec3);
+}
+
 std::string flights::getDepart()
 {
     return this->depart;
