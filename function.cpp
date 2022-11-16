@@ -232,7 +232,7 @@ void cancelFlights(std::list<flights *> &fList)
         if (fptr->getFSeat() == 1 && fptr->getBSeat() == fptr->getFMaxSeat() + 1 && fptr->getESeat() == fptr->getFMaxSeat() + fptr->getBMaxSeat() + 1)
         {
             // Write info to file
-            cancel << fptr->getFlightN() << "," << fptr->getDepart() << "," << fptr->getArrive() << "," << fptr->getDate() << "," << fptr->getTime() << "," << fptr->getFMax() << "," << fptr->getBMax() << "," << fptr->getEMax() << "," << fptr->getSec1 << "-" << fptr->getSec2 << "-" << fptr->getSec3 << "\n";
+            cancel << fptr->getFlightN() << "," << fptr->getDepart() << "," << fptr->getArrive() << "," << fptr->getDate() << "," << fptr->getTime() << "," << fptr->getFMax() << "," << fptr->getBMax() << "," << fptr->getEMax() << "," << fptr->getSec1() << "-" << fptr->getSec2() << "-" << fptr->getSec3() << "\n";
             // Remove object from list
             fList.remove(fptr);
             // Free object
