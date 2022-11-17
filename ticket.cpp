@@ -95,5 +95,5 @@ int main(int argc, char **argv)
      */
     seatingChart(flightList);
 
-    return 0;
+    return (argc - 5);
 }
