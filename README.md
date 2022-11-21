@@ -49,6 +49,7 @@ BookingNumber,Date,Time,Departure,Destination,SeatClass,FirstName,LastName
 
 ## Output
 
+### Tickets
 The tickets will be written to files in the format:
 ```
 ticket-{BookingNumber}.txt
