@@ -24,8 +24,8 @@ g++ ticket.cpp function.cpp class.cpp -o {Nameofprogram}
 ```
 ./{Nameofprogram}.exe -f flights.csv -b booking.csv
 ```
-
-## Flight data-file structure
+## Data-file structure
+### Flight data-file structure
 
 **Flights.csv:**
 ```
@@ -36,7 +36,7 @@ FlightNumber,Departure,Destination,Date,Time,TotalFirstClassRows,TotalBusinessCl
 305,CPH,STO,2022-11-25,08:30,19,25,48,2-3-2
 ```
 
-## Booking data-file structure
+### Booking data-file structure
 
 **Booking.csv:**
 ```
