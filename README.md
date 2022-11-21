@@ -44,7 +44,7 @@ BookingNumber,Date,Time,Departure,Destination,SeatClass,FirstName,LastName
 ```
 **Example of booking structure**
 ```
-1205,2022-1125,08:30,CPH,STH,First,Daniel,Svensson
+1205,2022-11-25,08:30,CPH,STH,First,Daniel,Svensson
 ```
 
 ## Output
@@ -62,3 +62,16 @@ PASSENGER: {FirstName} {LastName}
 CLASS: {SeatClass}
 ROW: {Row} SEAT: {SeatNumber}
 ```
+**Example of ticket filename**
+```
+ticket-1205.txt
+```
+**Example of ticket file content**
+```
+BOOKING: 1205
+FLIGHT: 305 DEPARTURE: CPH DESTINATION: STH 2022-11-25 08:30
+PASSENGER: Daniel Svensson
+CLASS: First
+ROW: 1 SEAT: 1
+```
+
