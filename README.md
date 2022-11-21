@@ -27,7 +27,7 @@ g++ ticket.cpp function.cpp class.cpp -o (Nameofprogram)
 
 ## Flight data-file structure
 
-### flights.csv:
+**Flights.csv:**
 ```
 FlightNumber,Departure,Destination,Date,Time,TotalFirstClassRows,TotalBusinessClassRows,TotalEconomyClassRows,SeatingConfiguration
 ```
