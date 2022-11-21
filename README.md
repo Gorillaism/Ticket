@@ -1,6 +1,7 @@
 # Ticket in CPP
 
 **Ticket system in cpp language**
+
 This is a program to reserve seats on a plane and print out tickets.
 
 The system starts by reading from the two files and sorts it into a list.
