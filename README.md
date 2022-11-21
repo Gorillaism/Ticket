@@ -2,7 +2,8 @@
 
 Ticket system in cpp language.
 
-The ticket system needs a file with flights and bookings to work.\n
+The ticket system needs a file with flights and bookings to work.
+
 **Example for compiling:**
 ```
 g++ ticket.cpp function.cpp class.cpp -o (nameofprogram)
