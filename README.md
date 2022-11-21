@@ -44,7 +44,7 @@ BookingNumber,Date,Time,Departure,Destination,SeatClass,FirstName,LastName
 ```
 **Example of booking structure**
 ```
-1205,2022-11-25,08:30,CPH,STH,First,Daniel,Svensson
+1205,2022-11-25,08:30,CPH,STH,first,Daniel,Svensson
 ```
 
 ## Output
