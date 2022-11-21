@@ -35,3 +35,14 @@ FlightNumber,Departure,Destination,Date,Time,TotalFirstClassRows,TotalBusinessCl
 ```
 305,CPH,STH,2022-11-25,08:30,19,25,48,2-3-2
 ```
+
+## Booking data-file structure
+
+**Booking.csv:**
+```
+BookingNumber,Date,Time,Departure,Destination,SeatClass,FirstName,LastName
+```
+**Example of booking structure**
+```
+1205,2022-1125,08:30,CPH,STH,First,Daniel,Svensson
+```
