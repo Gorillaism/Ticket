@@ -85,8 +85,43 @@ It will have the same structure as flights file-data structure for each flight:
 ```
 FlightNumber,Departure,Destination,Date,Time,TotalFirstClassRows,TotalBusinessClassRows,TotalEconomyClassRows,SeatingConfiguration
 ```
-**Examples of cancelled flights**
+**Example of cancelled flights**
 ```
 420,CPH,AMS,2022-11-25,09:30,30,40,55,3-3-3
 550,STO,AMS,2022-11-25,10:30,15,25,35,2-2-2
+```
+
+### Seating Charts
+The seating charts will all be written to a file with the name:
+```
+seating-report.txt
+```
+Each flight will have the following information in this format:
+```
+Flight {FlightNumber}, Departure {Departure}, Destination {Destination}, Date {Date}, Time {Time}
+First Class
+[1][1] [0][0][0] [0][0]
+etc....
+Business Class
+[1][1] [0][0][0] [0][0]
+etc....
+Economy Class
+[1][1] [0][0][0] [0][0]
+etc....
+```
+[1] represent reserved seats and [0] represent free seats.
+
+**Example of a seating chart**
+```
+Flight 305, Departure CPH, Destination STO, Date 2022-11-25, Time 08:30
+First Class
+[1][0] [0][0][0] [0][0]
+[0][0] [0][0][0] [0][0]
+etc....
+Business Class
+[0][0] [0][0][0] [0][0]
+etc....
+Economy Class
+[0][0] [0][0][0] [0][0]
+etc....
 ```
