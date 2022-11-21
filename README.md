@@ -14,13 +14,13 @@ Which mean it will take the empty flights info out of the list and put it into a
 Finally it will create a seating report on the remaining flights.
 
 ## Examples for compiling and running program
-nameofprogram meaning whatever name you would like to use yourself.
+(Nameofprogram) meaning whatever name you would like to use yourself.
 
 **Example for compiling:**
 ```
-g++ ticket.cpp function.cpp class.cpp -o (nameofprogram)
+g++ ticket.cpp function.cpp class.cpp -o (Nameofprogram)
 ```
 **Example for running:**
 ```
-./(nameofprogram).exe -f flights.csv -b booking.csv
+./(Nameofprogram).exe -f flights.csv -b booking.csv
 ```
