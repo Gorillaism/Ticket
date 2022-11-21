@@ -33,7 +33,7 @@ FlightNumber,Departure,Destination,Date,Time,TotalFirstClassRows,TotalBusinessCl
 ```
 **Example of flight structure**
 ```
-305,CPH,STH,2022-11-25,08:30,19,25,48,2-3-2
+305,CPH,STO,2022-11-25,08:30,19,25,48,2-3-2
 ```
 
 ## Booking data-file structure
@@ -44,7 +44,7 @@ BookingNumber,Date,Time,Departure,Destination,SeatClass,FirstName,LastName
 ```
 **Example of booking structure**
 ```
-1205,2022-11-25,08:30,CPH,STH,first,Daniel,Svensson
+1205,2022-11-25,08:30,CPH,STO,first,Daniel,Svensson
 ```
 
 ## Output
@@ -69,7 +69,7 @@ ticket-1205.txt
 **Example of ticket file content**
 ```
 BOOKING: 1205
-FLIGHT: 305 DEPARTURE: CPH DESTINATION: STH 2022-11-25 08:30
+FLIGHT: 305 DEPARTURE: CPH DESTINATION: STO 2022-11-25 08:30
 PASSENGER: Daniel Svensson
 CLASS: first
 ROW: 1 SEAT: 1
