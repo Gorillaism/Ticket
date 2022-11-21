@@ -76,3 +76,17 @@ CLASS: first
 ROW: 1 SEAT: 1
 ```
 
+### Cancelled Flights
+The cancelled flights will all be written to a file with the name:
+```
+cancelled-flights.txt
+```
+It will have the same structure as flights file-data structure for each flight:
+```
+FlightNumber,Departure,Destination,Date,Time,TotalFirstClassRows,TotalBusinessClassRows,TotalEconomyClassRows,SeatingConfiguration
+```
+**Examples of cancelled flights**
+```
+420,CPH,AMS,2022-11-25,09:30,30,40,55,3-3-3
+550,STO,AMS,2022-11-25,10:30,15,25,35,2-2-2
+```
