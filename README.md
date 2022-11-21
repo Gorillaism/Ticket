@@ -14,15 +14,15 @@ Which mean it will take the empty flights info out of the list and put it into a
 Finally it will create a seating report on the remaining flights.
 
 ## Example for compiling and running program
-(Nameofprogram) meaning whatever name you would like to use yourself.
+{Nameofprogram} meaning whatever name you would like to use yourself.
 
 **Example for compiling:**
 ```
-g++ ticket.cpp function.cpp class.cpp -o (Nameofprogram)
+g++ ticket.cpp function.cpp class.cpp -o {Nameofprogram}
 ```
 **Example for running:**
 ```
-./(Nameofprogram).exe -f flights.csv -b booking.csv
+./{Nameofprogram}.exe -f flights.csv -b booking.csv
 ```
 
 ## Flight data-file structure
@@ -45,4 +45,20 @@ BookingNumber,Date,Time,Departure,Destination,SeatClass,FirstName,LastName
 **Example of booking structure**
 ```
 1205,2022-1125,08:30,CPH,STH,First,Daniel,Svensson
+```
+
+## Output
+
+The tickets will be written to files in the format:
+```
+ticket-{BookingNumber}.txt
+```
+
+Each ticket will contain the following information in this format:
+```
+BOOKING: {BookingNumber}
+FLIGHT: {FlightNumber} DEPARTURE: {Departure} DESTINATION: {Destination} {Date} {Time}
+PASSENGER: {FirstName} {LastName}
+CLASS: {SeatClass}
+ROW: {Row} SEAT: {SeatNumber}
 ```
