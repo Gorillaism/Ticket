@@ -1,3 +1,13 @@
+/**
+ * @file bookings.cpp
+ * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
+ * @brief Bookings class definition
+ * @version 1
+ * @date 2022-11-21
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "bookings.hh"
 
 // Define bookings methods

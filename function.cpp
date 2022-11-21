@@ -2,7 +2,7 @@
  * @file function.cpp
  * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
  * @brief Functions definition
- * @version 1.1
+ * @version 1.2
  * @date 2022-11-09
  *
  * @copyright Copyright (c) 2022

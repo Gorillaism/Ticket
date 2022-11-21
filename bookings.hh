@@ -1,8 +1,8 @@
 /**
  * @file bookings.hh
  * @author Daniel Örhill (daniel.orhill@studerande.movant.se)
- * @brief 
- * @version 0.1
+ * @brief Bookings class header
+ * @version 1
  * @date 2022-11-21
  * 
  * @copyright Copyright (c) 2022
