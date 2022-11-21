@@ -19,10 +19,6 @@ Finally it will create a seating report on the remaining flights.
 g++ ticket.cpp function.cpp class.cpp -o (nameofprogram)
 ```
 **Example for running:**
-``````
+```
 ./(nameofprogram).exe -f flights.csv -b booking.csv
 ```
-
-The system starts by reading from the two files and sorts it into a list.
-It then cross reference to check for matching booking and flight to reserve a seat and create a ticket.
-After it has 
