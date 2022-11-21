@@ -9,8 +9,6 @@
  *
  */
 #include "function.hh"
-#include "flights.hh"
-#include "bookings.hh"
 
 /**
  * @brief Function to fill flight list
