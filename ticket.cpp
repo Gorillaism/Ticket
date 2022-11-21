@@ -11,7 +11,8 @@
 #include <iostream>
 #include <list>
 #include <unistd.h>
-#include "class.hh"
+#include "flights.hh"
+#include "bookings.hh"
 #include "function.hh"
 
 /**

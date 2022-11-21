@@ -166,7 +166,7 @@ void printTickets(std::list<flights *> fList, std::list<bookings *> bList)
             {
                 // Declare ticket name
                 char ticketName[20];
-                sprintf(ticketName, "ticket-%d.txt", bptr->getBookingN());
+                snprintf(ticketName, sizeof(ticketName), "ticket-%d.txt", bptr->getBookingN());
                 // Declare variables
                 int seat;
                 int row = 1;
