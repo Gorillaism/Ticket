@@ -14,7 +14,8 @@
 #include <iterator>
 #include <fstream>
 #include <sstream>
-#include "class.hh"
+#include "flights.hh"
+#include "bookings.hh"
 
 /**
  * @brief Function prototype to fill flight list
